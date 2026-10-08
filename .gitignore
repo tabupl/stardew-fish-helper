@@ -1,0 +1,18 @@
+# Compiled files and local SDK/package caches
+**/bin/
+**/obj/
+.cache/
+dist/
+
+# Personal settings and runtime data
+config.json
+data/
+verification/*.json
+verification/*.txt
+
+# Editor/OS files
+.DS_Store
+*.user
+.vs/
+__pycache__/
+*.pyc

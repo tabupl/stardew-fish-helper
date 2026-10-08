@@ -1,0 +1,9 @@
+{
+  "Name": "Fishing Planner",
+  "Author": "Adam",
+  "Version": "1.0.2",
+  "Description": "A live checklist of uncaught rod fish available now, with normal locations before magical catch-all ponds.",
+  "UniqueID": "Adam.FishingPlanner",
+  "EntryDll": "FishingPlanner.dll",
+  "MinimumApiVersion": "4.3.1"
+}

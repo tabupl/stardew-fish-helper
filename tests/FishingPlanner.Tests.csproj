@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><UseAppHost>false</UseAppHost></PropertyGroup><ItemGroup><Compile Include="../src/FishingPlanner/FishingRules.cs" Link="FishingRules.cs" /><Compile Include="../src/FishingPlanner/SuggestionSnapshot.cs" Link="SuggestionSnapshot.cs" /></ItemGroup></Project>

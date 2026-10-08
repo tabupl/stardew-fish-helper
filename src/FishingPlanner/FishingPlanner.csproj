@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>FishingPlanner</AssemblyName>
+    <Version>1.0.2</Version>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <!-- Game references are x64; the mod itself is portable IL, like SMAPI's standard build config. -->
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <GamePath Condition="'$(GamePath)' == '' and $([MSBuild]::IsOSPlatform('OSX'))">$(HOME)/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS</GamePath>
+    <GamePath Condition="'$(GamePath)' == '' and $([MSBuild]::IsOSPlatform('Windows'))">C:/Program Files (x86)/Steam/steamapps/common/Stardew Valley</GamePath>
+    <GamePath Condition="'$(GamePath)' == '' and $([MSBuild]::IsOSPlatform('Linux'))">$(HOME)/.local/share/Steam/steamapps/common/Stardew Valley</GamePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Stardew Valley"><HintPath>$(GamePath)/Stardew Valley.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="StardewValley.GameData"><HintPath>$(GamePath)/StardewValley.GameData.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="StardewModdingAPI"><HintPath>$(GamePath)/StardewModdingAPI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MonoGame.Framework"><HintPath>$(GamePath)/MonoGame.Framework.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="xTile"><HintPath>$(GamePath)/xTile.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(GamePath)/smapi-internal/Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="SMAPI.Toolkit.CoreInterfaces"><HintPath>$(GamePath)/smapi-internal/SMAPI.Toolkit.CoreInterfaces.dll</HintPath><Private>false</Private></Reference>
+    <None Include="../../manifest.json" Link="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="CheckGamePath" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GamePath)/StardewModdingAPI.dll')" Text="Install Stardew and SMAPI, or build with -p:GamePath=the game's executable directory." />
+  </Target>
+</Project>

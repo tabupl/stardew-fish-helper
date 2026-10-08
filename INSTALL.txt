@@ -1,0 +1,22 @@
+FISHING PLANNER 1.0.2 — MAC / WINDOWS
+
+Requires Stardew Valley 1.6.15+ and SMAPI 4.3.1+.
+1. Extract FishingPlanner-1.0.2.zip.
+2. Copy FishingPlanner into your game's Mods folder.
+   The final path is Mods/FishingPlanner/manifest.json, not Mods/Mods.
+3. Restart through Steam/SMAPI. The panel appears when the farm loads.
+
+Left Ctrl + Left Shift + F: toggle. Drag title: move.
+Arrows / mouse wheel over panel: page. Click fish: detailed fishing location.
+GMCM: shortcuts, number of rows, size, position and known-area filter.
+
+Three fish appear when three qualify. Crab pots are excluded.
+Ridge Pond, Goddess Spring and broad catch-all pools appear only when no normal uncaught fish qualify.
+Each player sees their own missing fish; either or both players can install it.
+By default, extra/gated areas appear after this farmer's first visit.
+
+Windows: Steam > Stardew Valley > Manage > Browse local files, then open Mods.
+Use your Windows SMAPI installer's launch configuration; no path from the Mac applies.
+For updates, preserve config.json. Remove only the FishingPlanner folder to uninstall.
+
+Built and checked offline. Not tested in a game session or on Windows/LAN.
